@@ -44,9 +44,16 @@ autoinstall:
     - htop
     - net-tools
 
-  late-commands:
-    # Sends a notification to your email via ntfy without exposing your password:
-    - curl -H "-H "Title: NUC 8 Installed" -d "Ubuntu installation finished successfully!" https://ntfy.sh/AirMyPrayer
-
   # Reboot the NUC when finished
   shutdown: reboot
+
+late-commands:
+    - |
+      HOST=$(cat /target/etc/hostname)
+      IP=$(hostname -I | awk '{print $1}')
+      curl \
+        -H "Title: ${HOST} Installation Complete" \
+        -H "Priority: urgent" \
+        -H "Tags: white_check_mark,tada" \
+        -d "Ubuntu installation is complete! System is rebooting now. Connect with: ssh adminuser@${IP}" \
+        https://ntfy.sh/airmyprayer
