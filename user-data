@@ -48,6 +48,10 @@ autoinstall:
   shutdown: reboot
 
   late-commands:
+
+  # 1. Create the universal UEFI fallback bootloader so NUC BIOS always finds it:
+    - curtin in-target -- cp /boot/efi/EFI/ubuntu/shimx64.efi /boot/efi/EFI/BOOT/BOOTX64.EFI
+
     - |
       HOST=$(cat /target/etc/hostname)
       IP=$(hostname -I | awk '{print $1}')
