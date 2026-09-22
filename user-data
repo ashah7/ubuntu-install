@@ -56,4 +56,4 @@ autoinstall:
         -H "Priority: urgent" \
         -H "Tags: white_check_mark,tada" \
         -d "Ubuntu installation is complete! System is rebooting now. Connect with: ssh adminuser@${IP}" \
-        https://ntfy.sh/airmyprayer
+        https://ntfy.sh/AirMyPrayer
