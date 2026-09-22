@@ -49,8 +49,8 @@ autoinstall:
 
   late-commands:
 
-  # 1. Create the universal UEFI fallback bootloader so NUC BIOS always finds it:
-    - curtin in-target -- cp /boot/efi/EFI/ubuntu/shimx64.efi /boot/efi/EFI/BOOT/BOOTX64.EFI
+# 1. Guarantee NUC 8 BIOS finds the UEFI bootloader:
+    - curtin in-target -- grub-install --removable
 
     - |
       HOST=$(cat /target/etc/hostname)
