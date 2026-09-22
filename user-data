@@ -47,7 +47,7 @@ autoinstall:
   # Reboot the NUC when finished
   shutdown: reboot
 
-late-commands:
+  late-commands:
     - |
       HOST=$(cat /target/etc/hostname)
       IP=$(hostname -I | awk '{print $1}')
