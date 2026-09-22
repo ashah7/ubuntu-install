@@ -49,9 +49,6 @@ autoinstall:
 
   late-commands:
 
-# 1. Guarantee NUC 8 BIOS finds the UEFI bootloader:
-    - curtin in-target -- grub-install --removable
-
     - |
       HOST=$(cat /target/etc/hostname)
       IP=$(hostname -I | awk '{print $1}')
