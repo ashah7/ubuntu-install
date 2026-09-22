@@ -1,0 +1,48 @@
+#cloud-config
+autoinstall:
+  version: 1
+  
+  # Regional / Localization settings
+  locale: en_GB.UTF-8
+  keyboard:
+    layout: gb
+
+  # Network Configuration (DHCP)
+  network:
+    network:
+      version: 2
+      renderer: networkd
+      ethernets:
+        all-eth:
+          match:
+            name: "en*"
+          dhcp4: true
+          dhcp6: false
+
+  # Storage Configuration (Auto-partitions NUC NVMe/SATA for UEFI)
+  storage:
+    layout:
+      name: direct
+
+  # User & Hostname Configuration
+  identity:
+    hostname: nuc8-node
+    username: ashah
+    # Encrypted password (change using: openssl passwd -6 "YourPassword")
+    password: "$6$bvhaSpKNXIa6BxCe$FeQstY7ZtvTpk1njDIlcJF3jVp.7zbDjWBmCktRuRRlLhBnA1qsmCdH7Qi9FYgsg4g8RsaHUPEuc5ZlnxA0xm1"
+
+  # SSH Access
+  ssh:
+    install-server: true
+    allow-pw: true
+
+  # Optional packages to pre-install
+  packages:
+    - curl
+    - wget
+    - git
+    - htop
+    - net-tools
+
+  # Reboot the NUC when finished
+  shutdown: reboot
