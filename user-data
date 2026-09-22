@@ -45,7 +45,7 @@ autoinstall:
     - net-tools
 
   # Reboot the NUC when finished
-  shutdown: reboot
+  shutdown: poweroff
 
   late-commands:
 
