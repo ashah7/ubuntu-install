@@ -23,6 +23,8 @@ autoinstall:
   storage:
     layout:
       name: direct
+      match:
+        type: nvme
 
   # User & Hostname Configuration
   identity:
@@ -45,7 +47,7 @@ autoinstall:
     - net-tools
 
   # Reboot the NUC when finished
-  shutdown: poweroff
+  shutdown: reboot
 
   late-commands:
 
