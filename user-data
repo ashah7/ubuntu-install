@@ -58,5 +58,5 @@ autoinstall:
         -H "Title: ${HOST} Installation Complete" \
         -H "Priority: urgent" \
         -H "Tags: white_check_mark,tada" \
-        -d "Ubuntu installation is complete! System is rebooting now. Connect with: ssh adminuser@${IP}" \
+        -d "Ubuntu installation is complete! System is rebooting now. Connect with: ssh ashah@${IP}" \
         https://ntfy.sh/AirMyPrayer
