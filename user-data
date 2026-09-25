@@ -26,7 +26,7 @@ autoinstall:
 
   # User & Hostname Configuration
   identity:
-    hostname: nuc8-node
+    hostname: amp-sys-01
     username: ashah
     # Encrypted password (change using: openssl passwd -6 "YourPassword")
     password: "$6$bvhaSpKNXIa6BxCe$FeQstY7ZtvTpk1njDIlcJF3jVp.7zbDjWBmCktRuRRlLhBnA1qsmCdH7Qi9FYgsg4g8RsaHUPEuc5ZlnxA0xm1"
